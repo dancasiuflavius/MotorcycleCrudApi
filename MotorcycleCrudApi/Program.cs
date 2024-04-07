@@ -1,10 +1,10 @@
-using MotorcycleCrudApi;
+using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using MotorcycleCrudApi.Data;
 using MotorcycleCrudApi.Motorcycles.Repository;
 using MotorcycleCrudApi.Motorcycles.Repository.Interfaces;
-using FluentMigrator.Runner;
-using MotorcycleCrudApi;
+using MotorcycleCrudApi.Motorcycles.Service;
+using MotorcycleCrudApi.Motorcycles.Service.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
+
 
 
 
@@ -30,7 +32,11 @@ builder.Services.AddFluentMigratorCore()
         .ScanIn(typeof(Program).Assembly).For.Migrations())
     .AddLogging(lb => lb.AddFluentMigratorConsole());
 
+builder.Services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
 
+builder.Services.AddScoped<IMotorcycleQuerryService, MotorcycleQueryService>();
+
+builder.Services.AddScoped<IMotorcycleComandService, MotorcycleCommandService>();
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -56,5 +62,3 @@ using (var scope = app.Services.CreateScope())
     runner.MigrateUp();
 }
 app.Run();
-
-

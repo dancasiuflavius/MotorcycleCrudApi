@@ -9,9 +9,10 @@ namespace MotorcycleCrudApi.Motorcycles.Repository.Interfaces
         Task<Motorcycle> GetByNameAsync(string name);
 
         Task<IEnumerable<Double>> GetAllAsyncPrice();
-        //Task<Product> GetByIdAsync(int id);
+        Task<Motorcycle> GetByIdAsync(int id);
+        Task<Motorcycle> UpdateAsync(int id, UpdateMotorcycleRequest productRequest);
         Task<Motorcycle> CreateAsync(CreateMotorcycleRequest carRequest);
         //Task<Product> UpdateAsync(int id, UpdateProductRequest productRequest);
-        //Task DeleteAsync(int id);
+        Task<Motorcycle> DeleteAsync(int id);
     }
 }

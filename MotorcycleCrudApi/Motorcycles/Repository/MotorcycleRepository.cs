@@ -49,5 +49,31 @@ namespace MotorcycleCrudApi.Motorcycles.Repository
             return car;
 
         }
+        public async Task<Motorcycle> GetByIdAsync(int id)
+        {
+            return await _context.Motorcycles.FindAsync(id);
+        }
+        public async Task<Motorcycle> UpdateAsync(int id, UpdateMotorcycleRequest request)
+        {
+            var product = await _context.Motorcycles.FindAsync(id);
+
+            product.Name = request.Name ?? product.Name;
+            product.Price = request.Price ?? product.Price;
+            product.Category = request.Category ?? product.Category;
+            product.DateOfFabrication = request.DateOfFabrication ?? product.DateOfFabrication;
+
+            _context.Motorcycles.Update(product);
+
+            await _context.SaveChangesAsync();
+
+            return product;
+        }
+        public async Task<Motorcycle> DeleteAsync(int id)
+        {
+            var product = await _context.Motorcycles.FindAsync(id);
+            _context.Motorcycles.Remove(product);
+            await _context.SaveChangesAsync();
+            return product;
+        }
     }
 }

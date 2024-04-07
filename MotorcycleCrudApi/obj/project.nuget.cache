@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o5HqgkESauZ+gRTrqbNwJqJoDU3qjgAMF789kmNGbrgcvBoQk0Y4Fq3miQGkmnDH0yh6CvPdiI3v2ECggYKpIQ==",
+  "dgSpecHash": "yGiTW8CDUbKMtMyh6l9o0N6ZjBI5hiStulV48rxTq38nb4titV0YLZTdIF928MV9HRVo2u62eqcUx+xQCBzmhA==",
   "success": true,
-  "projectFilePath": "E:\\mycode\\asp.net\\initiere\\MotorcycleCrudApi\\MotorcycleCrudApi\\MotorcycleCrudApi.csproj",
+  "projectFilePath": "E:\\mycode\\asp.net\\n-tier-apis\\MotorcycleCrudApi\\MotorcycleCrudApi\\MotorcycleCrudApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danca\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\danca\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
